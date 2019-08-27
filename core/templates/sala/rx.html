@@ -1,0 +1,31 @@
+{% extends 'baseSala.html' %}
+{% load static %}
+
+{% block head %}
+<title>Portadora RX</title>
+{% endblock %}
+
+{% block body %}
+<div id="particles">
+	<div class="intro">
+		<h1 id="id_RX_h1">{{ username }} <- offline</h1>
+		<div id="id_div_meter" hidden>
+			<div class="col s12 m12 l12" id="audios-container">
+				<ul class="collapsible expandable" id=audios-container-ul></ul>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
+
+{% block extrabottomjs %}
+<script>
+var romId = "123456}";
+var romName = "Campo";
+var firstName = "Rádio";
+var lastName = "Cidade Verde";
+var username = "cidadeverde@rx.com";
+
+</script>
+<script src="{% static 'assets/lib/webRTC/js/sala/rx.js' %}"></script>
+{% endblock %}
