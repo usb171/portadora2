@@ -1,0 +1,25 @@
+{% extends 'baseSala.html' %}
+{% load static %}
+
+{% block head %}
+<title>Portadora</title>
+{% endblock %}
+
+{% block body %}
+<div id="particles">
+    <div class="intro">
+        <div id="id_div_meter" hidden>
+            <canvas id="meter" width="600" height="15"></canvas>
+        </div>
+        <section class="make-center">
+            <input type="text" id="room-id"  autocorrect=off autocapitalize=off size=20 hidden>
+            <div id="audios-container"></div>
+        </section>
+    </div>
+</div>
+{% endblock %}
+
+{% block extrabottomjs %}
+<script src="{% static 'assets/lib/webRTC/js/sala/sala.js' %}"></script>
+{% endblock %}
+

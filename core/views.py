@@ -29,9 +29,9 @@ class Core():
                context['usuario'] = usuario
 
                if usuario.tipoStream == "1":
-                   return render(request, "sala/tx.html", context)
+                   return render(request, "sala/sala.html", context)
                elif usuario.tipoStream == '2':
-                   return render(request, "sala/tx.html", context)
+                   return render(request, "sala/sala.html", context)
                else:
                    auth_logout(request)
                    return redirect('login')
@@ -50,8 +50,9 @@ class CoreAjax():
                 sala = Sala.objects.filter(Q(tx=usuario) | Q(rx=usuario)).first()
                 data = {
                         'nomeUsuario': usuario.nome,
-                        'nomeSala': sala.nome,
+                        'sala': sala.nome,
                         'tipoStream': usuario.tipoStream,
+                        'socketMessageEvent': sala.socketMessageEvent,
                         'server': sala.server.nome,
                         'tx': sala.tx.nome,
                         'rx': sala.rx.nome

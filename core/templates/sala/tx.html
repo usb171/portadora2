@@ -18,8 +18,6 @@
 		<div id="audios-container"></div>
 	</section>
 
-
-
 	</div>
 </div>
 {% endblock %}
@@ -35,11 +33,12 @@ $.ajax({
     url: "/getDadosStream",
     dataType: 'json',
     success: function (data) {
+
         console.log(data)
         var connection = new RTCMultiConnection();
 
         connection.socketURL = "https://rtcmulticonnection.herokuapp.com/";
-        connection.socketMessageEvent = 'audio-conference-demo';
+        connection.socketMessageEvent = 'RADIO BIG GOSPEL';
 
         connection.session = {
             audio: true,
@@ -164,9 +163,7 @@ $.ajax({
             })();
         }
 
-
-
-        connection.openOrJoin(data.nomeSala, function(isRoomExist, roomid) {
+        connection.openOrJoin("yj5g", function(isRoomExist, roomid) {
                 if (!isRoomExist) {
                     //showRoomURL(roomid);
                 }

@@ -28,7 +28,8 @@ class Usuario(models.Model):
 
 
 class Sala(models.Model):
-    nome = models.CharField(max_length=500, help_text='* Nome da Sala')
+    nome = models.CharField(max_length=500, help_text='Nome da Sala')
+    socketMessageEvent = models.CharField(max_length=500, help_text='Mensagem do Socket', null=True)
     server = models.ForeignKey(ServidorStream, on_delete=models.SET_NULL, null=True)
     tx = models.OneToOneField(Usuario, related_name='TX', help_text='Aquele que Fala', on_delete=models.SET_NULL, null=True)
     rx = models.OneToOneField(Usuario, related_name='RX', help_text='Aquele que Escuta', on_delete=models.SET_NULL, null=True)
